@@ -2,8 +2,12 @@
   "name": "@kucrut/nothing",
   "version": "0.0.1",
   "description": "Nothing to see here.",
-  "main": "index.js",
-  "scripts": {},
+  "source": "assets/src/index.ts",
+  "main": "assets/dist/main.js",
+  "scripts": {
+    "dev": "parcel watch",
+    "build": "parcel build"
+  },
   "author": "Dzikri Aziz",
   "license": "GPL-2.0",
   "devDependencies": {
