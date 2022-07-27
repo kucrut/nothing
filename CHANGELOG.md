@@ -1,5 +1,11 @@
 # @kucrut/nothing
 
+## 0.0.4
+
+### Patch Changes
+
+- 746c154: Action: Add debug lines
+
 ## 0.0.3
 
 ### Patch Changes
