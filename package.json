@@ -1,0 +1,9 @@
+{
+  "name": "@kucrut/nothing",
+  "version": "0.0.1",
+  "description": "Nothing to see here.",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Dzikri Aziz",
+  "license": "GPL-2.0"
+}
