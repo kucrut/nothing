@@ -1,5 +1,0 @@
----
-"@kucrut/nothing": patch
----
-
-Initial
