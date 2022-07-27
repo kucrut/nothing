@@ -1,5 +1,12 @@
 # @kucrut/nothing
 
+## 0.0.6
+
+### Patch Changes
+
+- fa00f4d: Better version check & tag name
+- 04f96d6: Action: Fix check_new_version
+
 ## 0.0.5
 
 ### Patch Changes
