@@ -45,7 +45,7 @@ jobs:
         name: Check if there's a new version
         shell: bash
         run: |
-          CHANGELOG_UPDATED=$(git diff --name-only HEAD^ HEAD | grep CHANGELOG.md || true)
+          CHANGELOG_UPDATED=$(git diff --name-only main^ HEAD | grep CHANGELOG.md || true)
 
           echo "::debug::$CHANGELOG_UPDATED"
 
