@@ -1,0 +1,15 @@
+{
+    "name": "kucrut/nothing",
+    "description": "Nothing to see here.",
+    "type": "wordpress-plugin",
+    "require": {
+        "php": "^7.4.0"
+    },
+    "license": "GPL-v2",
+    "authors": [
+        {
+            "name": "Dzikri Aziz",
+            "email": "dzikri.aziz@gmail.com"
+        }
+    ]
+}
