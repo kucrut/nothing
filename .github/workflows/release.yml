@@ -39,7 +39,9 @@ jobs:
         name: Check if there's a new version
         shell: bash
         run: |
-          HAS_CHANGED=$(git diff --name-only --oneline HEAD^ HEAD | grep CHANGELOG.md)
+          git checkout main
+
+          HAS_CHANGED=$(git diff --name-only HEAD^ HEAD | grep CHANGELOG.md)
 
           if [ -z ${HAS_CHANGED+x} ]; then
             NEW_VERSION=''
