@@ -1,5 +1,11 @@
 # @kucrut/nothing
 
+## 0.0.7
+
+### Patch Changes
+
+- bba09a8: Action: Fix tag name
+
 ## 0.0.6
 
 ### Patch Changes
