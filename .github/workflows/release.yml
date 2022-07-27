@@ -27,3 +27,30 @@ jobs:
         uses: changesets/action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: check_new_version
+        name: Check if there's a new version
+        shell: bash
+        run: |
+          HAS_CHANGED=$(git diff --name-only --oneline HEAD^ HEAD | grep CHANGELOG.md)
+
+          if [ -z ${HAS_CHANGED+x} ]; then
+            NEW_VERSION=''
+          else
+            NEW_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[", ]//g')
+          fi
+
+          echo "::set-output name=new_version::$NEW_VERSION"
+
+      - name: Build assets
+        if: steps.check_new_version.outputs.new_version != ''
+        run: npm run build
+
+      - name: Create tag
+        if: steps.check_new_version.outputs.new_version != ''
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "--force assets/dist"
+          remove: "-r .changeset .github .editorconfig package-lock.json assets/src"
+          tag: v${{steps.check_new_version.outputs.new_version}}
+          push: true
