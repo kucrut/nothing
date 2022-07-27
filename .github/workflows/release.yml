@@ -65,6 +65,9 @@ jobs:
     needs: [check_new_version]
     if: needs.check_new_version.outputs.new_version != ''
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
       - name: Setup Node.js 18.x
         uses: actions/setup-node@v2
         with:
