@@ -79,5 +79,5 @@ jobs:
         with:
           add: "--force assets/dist"
           remove: "-r .changeset .github .editorconfig package-lock.json assets/src"
-          tag: v${{steps.check_new_version.outputs.new_version}}
+          tag: ${{ steps.check_new_version.outputs.new_version }}
           push: "--tags"
