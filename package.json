@@ -5,5 +5,8 @@
   "main": "index.js",
   "scripts": {},
   "author": "Dzikri Aziz",
-  "license": "GPL-2.0"
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "parcel": "^2.6.2"
+  }
 }
