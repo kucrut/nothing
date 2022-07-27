@@ -43,13 +43,17 @@ jobs:
         name: Check if there's a new version
         shell: bash
         run: |
-          HAS_CHANGED=$(git diff --name-only HEAD^ HEAD | grep CHANGELOG.md)
+          CHANGELOG_UPDATED=$(git diff --name-only HEAD^ HEAD | grep CHANGELOG.md)
 
-          if [ -z ${HAS_CHANGED+x} ]; then
+          ::debug::$CHANGELOG_UPDATED
+
+          if [ -z ${CHANGELOG_UPDATED+x} ]; then
             NEW_VERSION=''
           else
             NEW_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[", ]//g')
           fi
+
+          ::debug::$NEW_VERSION
 
           echo "::set-output name=new_version::$NEW_VERSION"
 
