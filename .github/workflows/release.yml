@@ -33,17 +33,19 @@ jobs:
   check_new_version:
     name: Check new version
     runs-on: ubuntu-latest
+    outputs:
+      new_version: ${{ steps.get_version.outputs.new_version }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
-      - id: check_new_version
+      - id: get_version
         name: Check if there's a new version
         shell: bash
         run: |
-          CHANGELOG_UPDATED=$(git diff --name-only HEAD^ HEAD | grep CHANGELOG.md)
+          CHANGELOG_UPDATED=$(git diff --name-only HEAD^ HEAD | grep CHANGELOG.md || true)
 
           echo "::debug::$CHANGELOG_UPDATED"
 
