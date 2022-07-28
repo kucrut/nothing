@@ -1,0 +1,1 @@
+{"mappings":"AAAA,MAAM,CAAC,gBAAgB,CAAC,kBAAkB,EAAE,IAAM;IACjD,OAAO,CAAC,GAAG,CAAC,QAAQ,CAAC,CAAC;CACtB,CAAC,CAAC","sources":["assets/src/index.ts"],"sourcesContent":["window.addEventListener(\"DOMContentLoaded\", () => {\n\tconsole.log(\"Hello!\");\n});\n"],"names":[],"version":3,"file":"main.js.map"}
