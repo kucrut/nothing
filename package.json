@@ -1,7 +1,8 @@
 {
   "name": "@kucrut/nothing",
-  "version": "0.0.7",
   "description": "Nothing to see here.",
+  "version": "0.0.7",
+  "private": true,
   "source": "assets/src/index.ts",
   "main": "assets/dist/main.js",
   "scripts": {
@@ -9,7 +10,7 @@
     "build": "parcel build"
   },
   "author": "Dzikri Aziz",
-  "license": "GPL-2.0",
+  "license": "GPL-2.0-only",
   "devDependencies": {
     "@changesets/cli": "^2.24.1",
     "parcel": "^2.6.2"
