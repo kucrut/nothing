@@ -25,10 +25,21 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Create Release Pull Request
+      - id: create_version_pr
+        name: Create Release Pull Request
         uses: changesets/action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update plugin version
+        shell: bash
+        if: steps.create_version_pr.outputs.hasChangesets != 'false'
+        run: |
+          NEW_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[", ]//g')
+          sed -i -E "s#(Version:[ ]+).*\$#\1${NEW_VERSION}#" plugin.php
+          git add plugin.php
+          git commit -m "Bump plugin version -> ${NEW_VERSION}"
+          git push
 
   check_new_version:
     name: Check new version
