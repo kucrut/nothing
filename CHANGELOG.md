@@ -1,5 +1,12 @@
 # @kucrut/nothing
 
+## 0.0.8
+
+### Patch Changes
+
+- 0f78714: Fix license
+- ea3bb45: Bump plugin version in release PR
+
 ## 0.0.7
 
 ### Patch Changes

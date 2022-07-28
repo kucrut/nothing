@@ -1,7 +1,7 @@
 {
   "name": "@kucrut/nothing",
   "description": "Nothing to see here.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
   "source": "assets/src/index.ts",
   "main": "assets/dist/main.js",
